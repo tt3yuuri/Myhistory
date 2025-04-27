@@ -1,0 +1,26 @@
+body{
+    background-image:url("images/hougan.jpg");
+}
+.image-container {
+    width: 300px; /* 画像の幅に合わせて調整 */
+    height: auto;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+}
+
+.button-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.button-container button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}
