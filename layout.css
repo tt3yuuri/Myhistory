@@ -13,3 +13,6 @@
     object-position: center;
     filter: grayscale(100%);
 }
+body{
+    background-image: url(images/back.jpg);
+}
