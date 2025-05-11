@@ -1,0 +1,15 @@
+.grid{
+    display: grid;
+    width: 94vw;
+    margin: 0 auto 3vw;
+    gap: 2vw;
+    grid-template-columns: 46vw 46vw;
+    grid-template-rows: 46vw 46vw 46vw 46vw;
+}
+.grid-item{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(100%);
+}
