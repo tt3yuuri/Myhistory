@@ -1,0 +1,13 @@
+# Myhistory/.streamlit/config.toml
+
+[server]
+enableStaticServing = true # これを「true」にする
+folderUpload = false
+maxUploadSize = 200 # MB, 必要ならサイズを調整
+maxMessageSize = 200 # MB, 必要ならサイズを調整
+
+[browser]
+gatherUsageStats = false
+
+[server.static] # このセクションを追加する!!
+folder = "static" # ★ ここがポイント！ staticフォルダの場所をStreamlitに教える
