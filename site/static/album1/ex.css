@@ -14,7 +14,7 @@
     filter: grayscale(100%);
 }
 body{
-    background-image: url(images/back.jpg);
+    background-image: url(/static/album1/images/back.jpg); 
 }
 
 
