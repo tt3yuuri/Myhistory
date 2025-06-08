@@ -1,0 +1,61 @@
+ul{
+    justify-content: space-between;
+}
+
+.button a {
+  font-family: 'Noto Sans JP', serif;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  color: #333;
+  font-weight: 700;
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  max-width: 180px;
+  text-align: center; 
+  padding: 4px 16px 4px 0;
+  margin: 24px;
+  margin-inline: auto;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.button a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 180px;
+  height: 2px;
+  background: #333;
+  bottom: 0;
+  transition: all 0.3s;
+}
+
+.button a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background: #333;
+  rotate: 40deg;
+  right: -4px;
+  bottom: 10px;
+  transition: all 0.3s;
+}
+
+.button a:hover::after,
+.button a:hover::before {
+  translate: 20px 0;
+  transition: all 0.3s;
+}
+
+.heading {
+    color: #4f4f4f;
+}
+
+.heading:first-letter {
+    color: #2586d0;
+    font-size: 2em;
+}
