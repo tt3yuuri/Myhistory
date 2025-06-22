@@ -51,6 +51,20 @@ ul{
   transition: all 0.3s;
 }
 
+img{
+max-width: 500px;
+height: auto;
+width: 100%;
+}
+
+body{
+    background-image: url(back1.jpg);
+    /* 基本的なスタイル */
+    font-family: sans-serif;
+    margin: 0; /* bodyのデフォルトのマージンをリセット */
+    padding: 0; /* bodyのデフォルトのパディングをリセット */
+}
+
 .heading {
     color: #4f4f4f;
 }
@@ -58,4 +72,42 @@ ul{
 .heading:first-letter {
     color: #2586d0;
     font-size: 2em;
+}
+
+.heading-title {
+    position: relative;
+    padding: .3em 0 .2em 1em;
+    border-bottom: 3px solid #25d0b4;
+    color: #333333;
+}
+
+.heading-title::before {
+    position: absolute;
+    top: 0;
+    left: .3em;
+    transform: rotate(55deg);
+    height: 11px;
+    width: 12px;
+    background: #25d0b4;
+    content: '';
+}
+
+.heading-title::after {
+    position: absolute;
+    transform: rotate(15deg);
+    top: .6em;
+    left: 0;
+    height: 8px;
+    width: 8px;
+    background: #25d0b4;
+    content: '';
+}
+
+.container {
+  /* コンテンツを囲む要素に最大幅と中央寄せを設定 */
+  max-width: 960px; /* 例えば、コンテンツの最大幅を960pxに設定 */
+  margin: 0 auto; /* 左右のマージンを自動で設定して中央寄せ */
+  background-color: #ffffff; /* コンテンツの背景色 */
+  padding: 20px; /* 内側の余白 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 影 */
 }
