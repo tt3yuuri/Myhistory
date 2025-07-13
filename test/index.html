@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アルバム作成</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>アルバム作成</h1>
+
+    <div class="upload-section">
+        <label for="imageUpload">画像を8枚選択してください:</label>
+        <input type="file" id="imageUpload" multiple accept="image/*">
+        <button id="createAlbumBtn" disabled>アルバムを作成</button>
+    </div>
+
+    <div class="preview-section">
+        <h2>選択された画像プレビュー:</h2>
+        <div id="imagePreviews">
+            </div>
+    </div>
+
+    <div id="viewAlbumSection" style="display: none; margin-top: 20px;">
+        <p>アルバムの生成が完了しました！</p>
+        <button id="viewAlbumBtn">作成されたアルバムを見る</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

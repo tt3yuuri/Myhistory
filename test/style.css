@@ -1,0 +1,58 @@
+/* style.css */
+body {
+    font-family: sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+.upload-section, .preview-section {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#imagePreviews {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.image-item {
+    border: 1px solid #ddd;
+    padding: 5px;
+    background-color: #eee;
+    text-align: center;
+    width: 150px; /* プレビュー画像の幅 */
+}
+
+.image-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    filter: grayscale(100%); /* 初期はモノクロ */
+    transition: filter 0.3s ease; /* ホバーでカラー化のアニメーション */
+}
+
+.image-item img:hover {
+    filter: grayscale(0%); /* ホバーでカラー */
+}
+
+#createAlbumBtn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+#createAlbumBtn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
