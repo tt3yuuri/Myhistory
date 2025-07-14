@@ -85,7 +85,6 @@ def create_album():
 def view_my_album():
     # ここに、開発者様が作成済みのアルバムレイアウトのHTMLを返すロジックを実装します。
     # 例: return render_template('your_album_template.html')
-    # 今は動きの確認のため、簡単なメッセージを返します。
     return render_template('layout.html')
 
 if __name__ == '__main__':
