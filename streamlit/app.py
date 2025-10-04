@@ -18,6 +18,8 @@ if 'page' not in st.session_state:
     st.session_state.page = 'manage'  # デフォルトはアルバム管理画面
 if 'selected_album' not in st.session_state:
     st.session_state.selected_album = None
+if 'album_to_delete' not in st.session_state:
+    st.session_state.album_to_delete = None
 
 # --- アルバム表示ページ ---
 def show_album_page(album_name):
@@ -163,20 +165,29 @@ if st.session_state.page == 'manage':
             st.subheader("アルバム削除")
             for album_name in album_names:
                 if st.button(f"'{album_name}'アルバムを削除", key=f"delete_album_{album_name}"):
-                    st.warning(f"本当に'{album_name}'アルバムを削除しますか？")
-                    col_confirm, col_cancel = st.columns(2)
-                    with col_confirm:
-                        if st.button("はい、削除します", key=f"confirm_delete_{album_name}"):
-                            try:
-                                shutil.rmtree(os.path.join(ALBUM_FOLDER, album_name))
-                                st.success(f"'{album_name}'アルバムを削除しました。")
-                            except Exception as e:
-                                st.error(f"アルバムの削除中にエラーが発生しました: {e}")
-                            st.rerun()
-                    with col_cancel:
-                        if st.button("キャンセル", key=f"cancel_delete_{album_name}"):
-                            st.info("削除をキャンセルしました。")
-                            st.rerun()
+                    st.session_state.album_to_delete = album_name
+                    st.rerun() # 削除確認の表示のために再読み込み
+
+            # 削除確認のロジック
+            if st.session_state.album_to_delete:
+                album_to_delete_name = st.session_state.album_to_delete
+                st.warning(f"本当に'{album_to_delete_name}'アルバムを削除しますか？")
+                col_confirm, col_cancel = st.columns(2)
+                with col_confirm:
+                    if st.button("はい、削除します", key=f"confirm_delete_{album_to_delete_name}"):
+                        try:
+                            shutil.rmtree(os.path.join(ALBUM_FOLDER, album_to_delete_name))
+                            st.success(f"'{album_to_delete_name}'アルバムを削除しました。")
+                            st.session_state.album_to_delete = None
+                        except Exception as e:
+                            st.error(f"アルバムの削除中にエラーが発生しました: {e}")
+                        st.rerun()
+                with col_cancel:
+                    if st.button("キャンセル", key=f"cancel_delete_{album_to_delete_name}"):
+                        st.info("削除をキャンセルしました。")
+                        st.session_state.album_to_delete = None
+                        st.rerun()
+
 
 elif st.session_state.page == 'view_album' and st.session_state.selected_album:
     show_album_page(st.session_state.selected_album)
