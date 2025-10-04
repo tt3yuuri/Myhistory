@@ -31,7 +31,7 @@ if uploaded_file is not None:
         brightness = st.slider('明るさ', 0.0, 2.0, 1.0)
         contrast = st.slider('コントラスト', 0.0, 2.0, 1.0)
     
-    with st.sidebar.expander("✂️ その他"):
+    with st.sidebar.expander("✂️ トリミング"):
         st.subheader("サイズ変更")
         new_width = st.slider("幅", 50, original_image.width, original_image.width)
         new_height = st.slider("高さ", 50, original_image.height, original_image.height)
@@ -50,7 +50,7 @@ if uploaded_file is not None:
         st.subheader("スタンプ")
         stamp_options = {
             "なし": None,
-            "フレーム1": "stamps/frame1.jpg",
+            "フレーム1": "stamps/frame1.png",
             "スタンプ1": "stamps/stamp1.png"
         }
         selected_stamp = st.selectbox("スタンプを選択", list(stamp_options.keys()))
