@@ -122,7 +122,7 @@ const dropSnowAnim = (option) => {
 let option = {
 	target_element: '#snow', // taget HTML element
 	where_to_insert: 'head', // Insert after the specified element in target_element. If unspecified, insert at the end of the target_element. ('img' 'p' '#id' etc)
-	snow_amount: 3, // Amount of snow (min 1 max 10)
+	snow_amount: 2, // Amount of snow (min 1 max 10)
 	snow_speed: 5, // Speed of snow (min 1 max 10)
 	snow_color: '#eae9e9ff', // Color of snow (hex, rgba, name)
 	snow_accumulation: false, // Whether or not there is snow accumulation.

@@ -28,3 +28,24 @@ position:absolute;
 top:900px;
 right: 150px;
 }
+
+.BGM {
+      position: fixed;
+      bottom: 20px;   /* 画面下からの距離 */
+      right: 20px;    /* 画面右からの距離 */
+      z-index: 9999;  /* 他の要素より上に表示するため */
+    }
+
+.bgm-toggle {
+      background: none;
+      border: none;
+      font-size: 13px;
+      cursor: pointer;
+      color: #333;
+      padding: 10px;
+    }
+
+    .bgm-toggle:hover {
+      color: #555;
+    }
+  
