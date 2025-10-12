@@ -1,0 +1,30 @@
+body{
+background-color: rgb(236, 240, 243);
+}
+
+.main{
+position:relative;
+}
+
+.town{
+position:absolute;
+left: 150px;
+}
+
+.baseball{
+position:absolute;
+top: 300px;
+right: 150px;
+}
+
+.fireworks{
+position:absolute;
+top: 600px;
+left: 150px;
+}
+
+.food{
+position:absolute;
+top:900px;
+right: 150px;
+}
