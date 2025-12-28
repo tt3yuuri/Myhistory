@@ -1,5 +1,5 @@
 // 雪が降るアニメーション
-const dropSnowAnim = (option) => {
+/*const dropSnowAnim = (option) => {
 	// default option
 	let default_option = {
 		target_element: 'body', // taget HTML element
@@ -122,7 +122,7 @@ const dropSnowAnim = (option) => {
 let option = {
 	target_element: '#snow', // taget HTML element
 	where_to_insert: 'head', // Insert after the specified element in target_element. If unspecified, insert at the end of the target_element. ('img' 'p' '#id' etc)
-	snow_amount: 2, // Amount of snow (min 1 max 10)
+	snow_amount: 3, // Amount of snow (min 1 max 10)
 	snow_speed: 5, // Speed of snow (min 1 max 10)
 	snow_color: '#eae9e9ff', // Color of snow (hex, rgba, name)
 	snow_accumulation: false, // Whether or not there is snow accumulation.
@@ -130,4 +130,65 @@ let option = {
 	animation_time: 600 // Animation time (s)
 };
 
-dropSnowAnim(option);
+dropSnowAnim(option);*/
+
+// アイコンを降らせるアニメーション
+
+document.addEventListener("DOMContentLoaded", () => {
+    createSnowflakes();
+});
+
+function createSnowflakes() {
+    // 1. 雪を入れるコンテナを作成してbodyに追加
+    const snowContainer = document.createElement('div');
+    snowContainer.id = 'snow-container';
+    document.body.appendChild(snowContainer);
+
+    // ⚡️ 設定：雪の数（増やしすぎると重くなるので注意）
+    const numberOfFlakes = 50; 
+
+    for (let i = 0; i < numberOfFlakes; i++) {
+        // Font Awesomeのアイコン要素を作成
+        const flake = document.createElement('i');
+        
+        // 2種類の結晶をランダムに混ぜる（fa-solid と fa-regular）
+        //const iconType = Math.random() > 0.5 ? 'fa-solid' : 'fa-regular';
+		const iconType = "fa-solid"; //本のアイコンがregularに対応していないため、solidに固定
+        
+        let iconName;
+		let kakuritu = Math.random()
+		
+		if(kakuritu < 0.2) { // 0.3を変えると出現率の変更ができる（0.3→30%）
+			iconName = "fa-star";
+			flake.classList.add("falling-star"); //☆専用のクラスに追加
+		} else if(kakuritu < 0.3) {
+			iconName = "fa-book";
+			flake.classList.add("falling-book");
+		} else {
+			iconName = "fa-snowflake";
+		}
+
+		flake.classList.add(iconType, iconName, "falling-snow")
+
+        // 横位置（画面の左端0%から右端100%の間）
+        flake.style.left = Math.random() * 100 + 'vw';
+        
+        // 大きさ（10px から 25px の間）
+        const size = Math.random() * 30 + 20;
+        flake.style.fontSize = size + 'px';
+        
+        // 落ちる速度（アニメーション時間：5秒 から 15秒 の間）
+        const duration = Math.random() * 10 + 5;
+        flake.style.animationDuration = duration + 's';
+
+        // 開始の遅延（これがないと一斉に降り始めて不自然になる）
+        // 0秒から開始までの間にランダムにスタートさせる
+        flake.style.animationDelay = -Math.random() * duration + 's';
+
+        // 透明度をランダムにして奥行き感を出す
+        flake.style.opacity = Math.random() * 0.6 + 0.4;
+
+        // コンテナに結晶を追加
+        snowContainer.appendChild(flake);
+    }
+}

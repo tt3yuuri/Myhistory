@@ -1,0 +1,247 @@
+body{
+    /* 凛とした明朝体にする場合: 'Shippori Mincho', serif;
+       柔らかい丸ゴシックにする場合: 'Zen Maru Gothic', sans-serif;
+    */
+    font-family: 'Zen Maru Gothic', sans-serif; 
+    color: #334455; /* 真っ黒ではなく、少し青みのあるグレーにすると冬らしくなります */
+    background-color: #f0f4f8; /* わずかに青白い背景 */
+    /*background-color: rgb(236, 240, 243);*/
+}
+
+.main{
+position:relative;
+}
+
+/* タイトルをより強調する */
+.card-title {
+    font-weight: 700;
+    letter-spacing: 0.1em; /* 文字の間隔を広げてゆとりを持たせる */
+    color: #2c3e50;
+}
+
+.town{
+position:absolute;
+left: 150px;
+}
+
+.baseball{
+position:absolute;
+top: 300px;
+right: 150px;
+}
+
+.fireworks{
+position:absolute;
+top: 600px;
+left: 150px;
+}
+
+.food{
+position:absolute;
+top:900px;
+right: 150px;
+}
+
+.BGM {
+      position: fixed;
+      bottom: 20px;   /* 画面下からの距離 */
+      right: 20px;    /* 画面右からの距離 */
+      z-index: 9999;  /* 他の要素より上に表示するため */
+    }
+
+.bgm-toggle {
+      background: none;
+      border: none;
+      font-size: 13px;
+      cursor: pointer;
+      color: #333;
+      padding: 10px;
+    }
+
+    .bgm-toggle:hover {
+      color: #555;
+    }
+
+/* winter2.css の基本構造 */
+
+/* --------------------------------- */
+/* タイムラインコンテナ (親要素) */
+/* --------------------------------- */
+.timeline-container {
+    position: relative;
+    max-width: 900px; /* タイムライン全体の最大幅 */
+    margin: 40px auto;
+}
+
+/* ⚡️ 中央の縦線 (絶対配置) */
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 4px; /* 線の太さ */
+    background-image: linear-gradient(
+        to bottom,        /* グラデーションの方向: 上から下へ */
+        #ace6ff,          /* 1. 黄金色 (上部) */
+        #d6b7ff,          /* 2. 濃いオレンジ色 (中間) */
+        #9bc4fd           /* 3. クリムゾン (下部) */
+    ); /* 線の色 */
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px; /* 線の太さの半分で中央に配置 */
+    z-index: 1; /* 他の要素より奥に配置 */
+}
+
+/* --------------------------------- */
+/* 各ノード (左右の配置を制御) */
+/* --------------------------------- */
+.timeline-node {
+    position: relative;
+    width: 50%; /* 親要素の半分の幅 */
+    margin-bottom: 80px; /* 縦の間隔 */
+    box-sizing: border-box; 
+    
+    /* ⚡️ 垂直方向の中央揃えのためのFlexbox */
+    display: flex;
+    align-items: center; /* 枝とカードの縦位置を合わせる */
+}
+
+/* --------------------------------- */
+/* 枝と丸い点 (擬似要素) */
+/* --------------------------------- */
+
+/* 枝（横線）を作成 */
+.timeline-node::before {
+    content: '';
+    position: absolute;
+    width: 200px; /* 枝の長さ */
+    height: 3px;
+    background-image: linear-gradient(
+        to bottom,        /* グラデーションの方向: 上から下へ */
+        #ace6ff,          /* 1. 黄金色 (上部) */
+        #d6b7ff,          /* 2. 濃いオレンジ色 (中間) */
+        #9bc4fd           /* 3. クリムゾン (下部) */
+    ); /* 線の色 */
+    top: 50%; 
+    transform: translateY(-50%); /* 縦方向中央揃え */
+    z-index: 10;
+}
+
+/* 丸い点（枝の先端）を作成 */
+.timeline-node::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 4px solid #d1d1d1;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%); /* 縦方向中央揃え */
+    z-index: 10; 
+}
+
+/* --------------------------------- */
+/* 左右の配置調整 */
+/* --------------------------------- */
+
+/* ⚡️ 左側のノード */
+.left {
+    right: 6.7%;
+    /* カードを中央線から離すための余白 */
+    margin-right: 80px; 
+    /* カードをノードの右端（中央線側）に寄せる */
+    justify-content: flex-start; 
+    padding-right: 50px;
+}
+
+/* 左側の枝と点の位置調整 (右に配置) */
+.left::before {
+    right: -55px; /* 枝の終点 */
+}
+.left::after {
+    right:-70px; /* 点の位置 */
+}
+
+/* ⚡️ 右側のノード */
+.right {
+    left: 50%; /* 中央線から開始 */
+    /* カードを中央線から離すための余白 */
+    margin-left: 60px; 
+    /* カードをノードの左端（中央線側）に寄せる */
+    justify-content: flex-end;
+    padding-left: 50px;
+}
+
+/* 右側の枝と点の位置調整 (左に配置) */
+.right::before {
+    left: -55px;
+}
+.right::after {
+    left: -70px;
+}
+
+/* --------------------------------- */
+/* カードのサイズ制御 、ホバーテキストの調整*/
+/* --------------------------------- */
+/* --- ⚡️ボタンの「VIEW MORE」ホバー設定 --- */
+.album-link {
+    min-width: 140px; /* ⚠️ ボタンが縮まないように最低限の幅を固定 */
+}
+
+.timeline-card {
+    max-width: 300px; /* カードが大きすぎないように制限 */
+    width: 100%;
+}
+
+h6{
+    display: grid;
+}
+
+/* winter2.css に追加 */
+
+/* --- 全画面雪エフェクトのスタイル --- */
+
+/* 雪を内包するコンテナ（画面全体を覆う、操作を邪魔しない） */
+#snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* ⚡️重要：クリックが雪を突き抜けて下のコンテンツに届くようにする */
+    z-index: -1; /* コンテンツの背景に配置（必要に応じて 9999 などにして前面にもできます） */
+    overflow: hidden;
+}
+
+/* 星のアイコンだけ色を変える */
+.falling-star {
+    color: #f1e5a0 !important; /* 金色（黄色） */
+}
+
+/* 本のアイコンの色（例：落ち着いた茶色や赤など） */
+.falling-book {
+    color: #ad998b !important; /* ショコラ色 */
+}
+
+/* 個々の雪の結晶（Font Awesomeアイコン） */
+.falling-snow {
+    position: absolute;
+    top: -50px; /* 画面の少し上からスタート */
+    color: rgb(198, 221, 225); /* 雪の色（背景に合わせて調整してください。薄い水色 #a5d8ff なども良いです） */
+    opacity: 0.8;
+    /* アニメーション設定（名前、時間、動き方、無限ループ） */
+    animation: snowfall linear infinite; 
+}
+
+/* 雪が落ちるアニメーションの定義 */
+@keyframes snowfall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.8;
+    }
+    100% {
+        /* 画面の下まで落ちる + 少し回転させる + 少し横に揺らす */
+        transform: translateY(110vh) rotate(360deg) translateX(20px);
+        opacity: 0.2; /* 落ちながら消えていく */
+    }
+}
