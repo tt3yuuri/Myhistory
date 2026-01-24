@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./post.css" rel="stylesheet" type="text/css" />
+</head>
+    <body class="bg-light">
+
+<div class="container my-5 pb-5">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="card shadow-sm post-form-card">
+                <div class="card-body p-4 p-md-5">
+                    <h3 class="card-title text-center mb-4">
+                        <i class="fa-solid fa-pen-nib me-2"></i>新しいアルバムを記録する
+                    </h3>
+                    
+                    <form id="album-post-form">
+                        <div class="mb-3">
+                            <label for="albumTitle" class="form-label">アルバムのタイトル</label>
+                            <input type="text" class="form-control" id="albumTitle" placeholder="例：冬の散歩道" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="albumDate" class="form-label">作成者(ニックネーム)</label>
+                            <input type="text" class="form-control" id="nickname" placeholder="例：ハンバーガー大好き" required>
+                        </div>
+
+                        <!--<div class="mb-3">
+                            <label for="albumDescription" class="form-label">アルバムの説明</label>
+                            <textarea class="form-control" id="albumDescription" rows="3" placeholder="エピソードを記入してください"></textarea>
+                        </div>-->
+
+                        <div class="mb-4">
+                            <label for="albumImage" class="form-label">画像を選択</label>
+                            <input class="form-control" type="file" id="albumImage" accept="image/*">
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary rounded-pill px-5 album-link">
+                                アルバムを追加する
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="container vh-100 d-flex align-items-center justify-content-center">
+        <div class="col-md-6">
+            <div class="text-center mt-3">
+                <a href="index.html" class="text-secondary">← タイムラインに戻る</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

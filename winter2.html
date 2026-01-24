@@ -49,11 +49,17 @@
 
     <div id="snow">  
 
-      <h2 class="text-center m-5">説明</h2>
+      <h3 class="text-center m-5">ここは、様々なジャンルの写真を集めたアルバムサイト“MYHISTORY”です。
+       各カテゴリの下部から[VIEW MORE]をクリックすると写真を見ることが出来ます。
+      </h3>
 
       <!--カード型・アルバム一覧（予定）-->
       <div class="main py-5">
         <div class="timeline-container">
+
+          <div class="timeline-marker start-marker">
+            <i class="fa-solid fa-certificate"></i> 
+          </div>
 
 
           <div class="timeline-node left">
@@ -100,7 +106,49 @@
               </div>
           </div>
 
+          <div class="timeline-marker end-marker">
+            <i class="fa-brands fa-font-awesome"></i>
+          </div>
+
         </div>
+
+        <div class="container my-5 pb-5">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="card shadow-sm post-form-card">
+                <div class="card-body p-4 p-md-5">
+                    <h3 class="card-title text-center mb-4">
+                        <i class="fa-solid fa-pen-nib me-2"></i>新しいアルバムを記録する
+                    </h3>
+                    
+                    <form id="album-post-form">
+                        <div class="mb-3">
+                            <label for="albumTitle" class="form-label">アルバムのタイトル</label>
+                            <input type="text" class="form-control" id="albumTitle" placeholder="例：冬の散歩道" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="albumDate" class="form-label">作成者(ニックネーム)</label>
+                            <input type="text" class="form-control" id="nickname" placeholder="例：ハンバーガー大好き" required>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="albumImage" class="form-label">画像を選択</label>
+                            <input class="form-control" type="file" id="albumImage" accept="image/*">
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary rounded-pill px-5 album-link">
+                                アルバムを追加する
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+          </div>
+        </div>
+        </div>
+
       </div>
 
       <audio class="bgm" src="stardust.mp3" loop></audio>
@@ -119,7 +167,6 @@
         </ul>
       </div>
 
-      
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
    </div>
   </body>
