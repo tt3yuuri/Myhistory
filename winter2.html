@@ -40,7 +40,12 @@
         </div>
     </div>
 
-    <img src="logo6.png" alt="手前の画像" class="position-absolute" style="top: 0px; left: -185px; z-index: 2;">
+    <!--<img src="logo6.png" alt="手前の画像" class="position-absolute" style="top: 0px; left: -185px; z-index: 2;">-->
+    <picture>
+        <source media="(max-width: 800px)" srcset="logo6smart3.png">
+        
+        <img src="logo6.png" alt="Winter Album Header" class="header-img,position-absolute" style="top: 0px; left: -185px; z-index: 2;">
+    </picture>
     </div>
 
     <title>MYHISTORY</title>
@@ -155,7 +160,7 @@
       <audio class="bgm" src="cyber.mp3" loop></audio>
 
 
-      <div class="BGM dropup">
+      <div class="BGM-dropup">
         <button class="btn btn-secondary dropdown-toggle rounded-pill" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
           ♪
         </button>
