@@ -12,6 +12,10 @@ body{
 position:relative;
 }
 
+.header-img{
+top: 0px;
+}
+
 /* タイトルをより強調する */
 .card-title {
     font-weight: 700;
@@ -353,9 +357,6 @@ h6{
         height: 50px !important;
         border-radius: 50% !important; /* 丸いボタンにする */
         font-size: 20px !important;
-        background-color: rgba(255, 255, 255, 0.9) !important;
-        border: 2px solid #de98ff !important;
-        color: #de98ff !important;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         display: flex;
         align-items: center;
