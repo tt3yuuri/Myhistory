@@ -42,7 +42,7 @@ top:900px;
 right: 150px;
 }
 
-.BGM {
+.bgm {
       position: fixed;
       bottom: 20px;   /* 画面下からの距離 */
       right: 20px;    /* 画面右からの距離 */
