@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MYHISTORY</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./index.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script src="function.js" defer></script>
+    <script src="winter.js" defer></script>
+</head>
+
+<body>
+    <div id="snow">
+        <header class="position-relative">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active"><img src="headerimg/head1.webp" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="headerimg/head2.webp" class="d-block w-100" alt="..."></div>
+                    <div class="carousel-item"><img src="headerimg/head3.webp" class="d-block w-100" alt="..."></div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+
+            <div class="logo-area">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="logo6smart.png">
+                    <img src="logo6.png" alt="Winter Album Header" class="header-logo">
+                </picture>
+            </div>
+        </header>
+
+        <h3 class="text-center m-5 px-3">
+            ここは、様々なジャンルの写真を集めたアルバムサイト“MYHISTORY”です。<br>
+            各カテゴリの下部にあるボタンをクリックすると写真を見ることが出来ます。
+        </h3>
+
+        <div class="main py-5">
+            <div class="timeline-container">
+                <div class="timeline-marker start-marker">
+                    <i class="fa-solid fa-certificate"></i>
+                </div>
+
+                <div class="timeline-node left">
+                    <div class="timeline-card card shadow-sm text-center">
+                        <img src="static/album1/images/400/1-1.webp" class="card-img-top" alt="TOWN">
+                        <div class="card-body">
+                            <h5 class="card-title">TOWN</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">by Anna</h6>
+                            <a href="static/album1/TOWN.html" class="btn btn-primary rounded-pill btn-light btn-outline-light">VIEW MORE</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-marker end-marker">
+                    <i class="fa-brands fa-font-awesome"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="container my-5 pb-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card shadow-sm post-form-card">
+                        <div class="card-body p-4 p-md-5">
+                            <h3 class="card-title text-center mb-4"><i class="fa-solid fa-pen-nib me-2"></i>新しいアルバムを記録する</h3>
+                            <form id="album-post-form">
+                                <div class="mb-3">
+                                    <label class="form-label">アルバムのタイトル</label>
+                                    <input type="text" class="form-control" id="albumTitle" placeholder="例：冬の散歩道" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">作成者(ニックネーム)</label>
+                                    <input type="text" class="form-control" id="nickname" placeholder="例：ハンバーガー大好き" required>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label">画像を選択</label>
+                                    <input class="form-control" type="file" id="albumImage" accept="image/*">
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary rounded-pill px-5">アルバムを追加する</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <audio class="bgm" src="stardust.mp3" loop></audio>
+        <audio class="bgm" src="echo.mp3" loop></audio>
+        <audio class="bgm" src="cyber.mp3" loop></audio>
+
+        <div class="BGM-dropup">
+            <button class="btn btn-secondary dropdown-toggle rounded-pill" type="button" data-bs-toggle="dropdown">♪</button>
+            <ul class="dropdown-menu shadow">
+                <li><span class="dropdown-item">STARDUST <button class="bgm-toggle">▶</button></span></li>
+                <li><span class="dropdown-item">ECHO <button class="bgm-toggle">▶</button></span></li>
+                <li><span class="dropdown-item">CYBER <button class="bgm-toggle">▶</button></span></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
