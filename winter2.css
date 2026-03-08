@@ -336,6 +336,17 @@ h6{
         padding-top: 5px;
     }
 
+    /* ボタンを囲んでいる親要素がある場合 */
+    .bgm-dropup {
+        position: fixed;   /* 画面の決まった位置に固定 */
+        bottom: 100px;     /* 下から少し浮かせる（追加ボタンと被らないように） */
+        right: 20px;       /* 右端に寄せる */
+        display: flex;
+        flex-direction: column; /* 縦に並べる */
+        gap: 10px;         /* ボタン同士の隙間 */
+        z-index: 9999;     /* 常に最前面に */
+    }
+
     /* ボタン自体の見た目調整 */
     .bgm-toggle {
         width: 50px !important;  /* 指で押しやすいサイズに大きく */
