@@ -289,6 +289,10 @@ h6{
 /* --- 📱 スマホ・タブレット用設定 (画面幅 768px 以下) --- */
 @media (max-width: 768px) {
 
+    .header-img{
+        top: 0px;
+    }
+
     /* 1. 全体のコンテナの余白調整 */
     .timeline-container {
         padding-left: 20px;
