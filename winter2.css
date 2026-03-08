@@ -336,7 +336,8 @@ h6{
         padding-top: 5px;
     }
 
-    .bgm-toggle{
+    /* ボタン自体の見た目調整 */
+    .bgm-toggle {
         width: 50px !important;  /* 指で押しやすいサイズに大きく */
         height: 50px !important;
         border-radius: 50% !important; /* 丸いボタンにする */
